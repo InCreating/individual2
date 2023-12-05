@@ -25,11 +25,14 @@
                 <c:otherwise>No</c:otherwise>
             </c:choose></td>
             <td><a href="<c:url value='/deleteAccount'><c:param name='accountId' value='${account.accountId}'/></c:url>">Delete account</a></td>
-            <td><a href="/accounts">Edit account</a></td>
+            <td><a href="<c:url value='/editAccount'><c:param name='accountId' value='${account.accountId}'/></c:url>">Edit account</a></td>
         </tr>
     </c:forEach>
 </table>
-<a href="/addAccount.html">Add accounts</a>
+<a href="/addAccount">Add accounts</a>
 <a href="/form.html">Go back</a>
+
+
+
 </body>
 </html>

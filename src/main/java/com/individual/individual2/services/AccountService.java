@@ -25,6 +25,7 @@ public class AccountService {
     }
 
     public void deleteAccount(int id) {
+        System.out.println("Deleting account with ID: " + id);
         accountRepository.deleteById(id);
     }
 

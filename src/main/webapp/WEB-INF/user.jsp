@@ -20,9 +20,12 @@
             <td>${user.name}</td>
             <td>${user.surname}</td>
             <td><a href="<c:url value='/deleteUser'><c:param name='userId' value='${user.userId}'/></c:url>">Delete user</a></td>
+            <td><a href="<c:url value='/editUser'><c:param name='userId' value='${user.userId}'/></c:url>">Edit</a></td>
         </tr>
     </c:forEach>
 </table>
+<a href="/addUser.html">Add new user</a>
 <a href="/form.html">Go back</a>
+
 </body>
 </html>

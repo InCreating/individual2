@@ -28,6 +28,10 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
 
     //List<Account> findByAccountName(String name);
 
+
+
+
+
     Account findById(int id);
     List<Account> findAll();
     Account save(Account account); //добавление и обновление данных
