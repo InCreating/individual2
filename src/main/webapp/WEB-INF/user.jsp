@@ -23,5 +23,6 @@
         </tr>
     </c:forEach>
 </table>
+<a href="/form.html">Go back</a>
 </body>
 </html>

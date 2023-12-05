@@ -19,7 +19,7 @@
         <tr>
             <td>${account.accountId}</td>
             <td>${account.user.userId}</td>
-            <td>${account.balance}</td>
+            <td>${account.balance != null ? account.balance : '0.0'}</td>
             <td><c:choose>
                 <c:when test="${account.available == true}">Yes</c:when>
                 <c:otherwise>No</c:otherwise>
@@ -29,5 +29,7 @@
         </tr>
     </c:forEach>
 </table>
+<a href="/addAccount.html">Add accounts</a>
+<a href="/form.html">Go back</a>
 </body>
 </html>

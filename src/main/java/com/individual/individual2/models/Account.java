@@ -12,10 +12,10 @@ public class Account {
     @Column(name = "accountID")
     private int accountId;
 
-    @Column(name = "balans")
+    @Column(name = "balance")
     private double balance;
 
-    @Column(name = "availible")
+    @Column(name = "available")
     private boolean available;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -31,7 +31,6 @@ public class Account {
         this.available = available;
     }
 
-
     public int getAccountId() {
         return accountId;
     }
@@ -44,7 +43,7 @@ public class Account {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(User user) { // Изменен тип параметра
         this.user = user;
     }
 
@@ -70,12 +69,6 @@ public class Account {
                 "accountId=" + accountId +
                 ", balance=" + balance +
                 ", available=" + available +
-                ", user=" + user +
                 '}';
     }
-
-    /*public String getFullName() {
-        return user.getName() + user.getSurname();
-    }*/
-
 }
