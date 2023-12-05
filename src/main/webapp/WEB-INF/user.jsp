@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="/newStyle.css">
 </head>
 <body>
 <h2>Users List</h2>
