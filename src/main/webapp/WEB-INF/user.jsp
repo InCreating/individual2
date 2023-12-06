@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/newStyle.css">
 </head>
 <body>
+<div class="container">
 <h2>Users List</h2>
 <table border="1">
     <tr>
@@ -27,6 +28,6 @@
 </table>
 <a href="/addUser.html">Add new user</a>
 <a href="/form.html">Go back</a>
-
+</div>
 </body>
 </html>
