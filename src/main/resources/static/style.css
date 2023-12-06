@@ -237,21 +237,17 @@ svg:hover{
 .form-container{
     display: block;
     flex-direction: column;
-    border: 1px solid blue;
+
     width: 600px;
 }
 
-.input-text-block{
 
-    display: flex;
-    flex-direction: row;
-
-}
 
 
 
 
 .input-text {
+    font-size: 0.8em;
     background-color: #212121;
     max-width: 190px;
     height: 20px;
@@ -262,6 +258,7 @@ svg:hover{
     transition: 0.5s;
     font-family: "Cascadia Code", Serif;
     font-weight: bold;
+    color: white;
 
 }
 
@@ -301,7 +298,7 @@ svg:hover{
     left: 0;
     height: 1.3em;
     width: 1.3em;
-    background-color: #ccc;
+    background-color: #212121;
     border-radius: 15px;
     box-shadow: 0px 0px 0px #c7bbb8;
     transition: 0.3s;
@@ -340,8 +337,57 @@ svg:hover{
 }
 
 .input-block{
-    border: 1px solid red;
-    display: inline;
+
+    display: flex;
+    flex-direction: row;
     height: 70px;
+     margin: 20px;
+ align-items: center;
+    font-size: 1.5em;
+
+    text-align:end ;
 
 }
+
+
+.custom-select select {
+    background-color: #212121;
+    color: aliceblue;
+    width: 268px;
+    padding: 5px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    font-size: 1.5em;
+    font-family: "Cascadia Code", monospace ;
+    -webkit-appearance: none;
+}
+.custom-select option {
+    background-color: #212121;
+}
+.custom-select {
+
+    max-width: 190px;
+
+    color: aliceblue;
+
+    height: 34px;
+
+    font-size: 0.7em;
+    font-family: "Cascadia Code", monospace ;
+    overflow: hidden;
+    background-color: #212121;
+    border: 1px solid #3b3b3b;
+    border-radius:4px;
+    transition: 0.5s;
+}
+
+.custom-select:focus{
+
+    outline: none;
+    box-shadow: 0px 0px 20px #ffbd00;
+    transition: 0.5s;
+}
+
+

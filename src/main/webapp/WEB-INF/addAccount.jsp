@@ -9,40 +9,59 @@
 </head>
 <body>
 <div class="container">
-<h2>Add new account</h2>
-<div class="form-container">
+    <h2>Add new account</h2>
+    <div class="form-container">
 
-<form action="addAccount" method="post">
+        <form action="addAccount" method="post">
 
 
+            <div class="input-block">
+                <div style="width: 50%;margin-right :30px;">
+                    <label for="balance">Balance:</label>
+                </div>
 
-    <div class="input-block">
-    <label for="balance">Balance:</label>
-    <input type="text" id="balance" name="balance" class="input-text"><br><br>
 
-    <div class="input-block">
-    <span >Available:</span>
+                <div style="width: 50%;  display: flex; justify-content: start; ">
+                    <input type="number" id="balance" name="balance" class="input-text">
+                </div>
+            </div>
 
-        <label class="cb-ctnr">
-            <input type="checkbox" id="available" name="available" value="true" >
-            <div class="checkmark"></div>
-        </label>
+            <div class="input-block">
+                <div style="width: 50%;margin-right :30px;">
+                    <span>Available:</span>
+                </div>
+                <div style="width: 50%;  display: flex; justify-content: start; ">
+                    <label class="cb-ctnr">
+                        <input type="checkbox" id="available" name="available" value="true">
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="input-block">
+                <div style="width: 50%;margin-right :30px;  align-items: center ;">
+                    <label for="user">User:</label>
+                </div>
+
+
+                <div style="width: 50%;  display: flex; justify-content: start; align-items: center ">
+                    <select id="user" name="user_id" class="custom-select">
+                        <c:forEach var="user" items="${users}">
+                            <option value="${user.userId}">${user.name} ${user.surname}</option>
+                        </c:forEach>
+                    </select><br><br>
+                </div>
+            </div>
+
+
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
+                <button type="submit" class="btn bn">Add</button>
+                <button class="btn bn" href="<c:url value='/accounts'/>">Go back</button>
+            </div>
+        </form>
 
     </div>
-
-
-        <div class="input-block">
-    <label for="user">User:</label>
-    <select id="user" name="user_id" >
-        <c:forEach var="user" items="${users}">
-            <option value="${user.userId}">${user.name} ${user.surname}</option>
-        </c:forEach>
-    </select><br><br>
-        </div>
-
-    <input type="submit" class="btn bn" value="Add">
-</form>
-</div>
 </div>
 </body>
 </html>
