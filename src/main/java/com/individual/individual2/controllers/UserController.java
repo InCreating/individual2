@@ -30,6 +30,7 @@ public class UserController {
         model.addAttribute("user", new User());
         return "addUser";
     }
+
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute("user") User newUser) {
         userService.saveUser(newUser);

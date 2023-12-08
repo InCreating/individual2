@@ -10,7 +10,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "accountID")
-    private int accountId;
+    private Integer accountId;
 
     @Column(name = "balance")
     private double balance;

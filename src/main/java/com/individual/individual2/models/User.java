@@ -18,7 +18,7 @@ public class User {
     @Column(name = "surname", length = 20)
     private String surname;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Account> accounts = new ArrayList<>();
 
     public User() {}

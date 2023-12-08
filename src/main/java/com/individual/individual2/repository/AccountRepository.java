@@ -35,5 +35,5 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
     Account findById(int id);
     List<Account> findAll();
     Account save(Account account); //добавление и обновление данных
-    void delete(Account account);
+    void deleteById(Integer id);
 }

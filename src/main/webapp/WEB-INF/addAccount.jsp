@@ -57,7 +57,7 @@
 
             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
                 <button type="submit" class="btn bn">Add</button>
-                <button class="btn bn" href="<c:url value='/accounts'/>">Go back</button>
+                <a class="btn bn" href="/accounts">Go back</a>
             </div>
         </form>
 

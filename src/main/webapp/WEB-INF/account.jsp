@@ -4,12 +4,11 @@
 <head>
     <title>Accounts</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
-
 </head>
 <body>
 <div class="container">
 <h2>Accounts List</h2>
-    <a class="btn bn" href="/addAccount">Add accounts</a>
+    <a class="btn bn" href="/addAccount">Add account</a>
     <a class="btn bn" href="/form.html">Go back</a>
 
     <div>

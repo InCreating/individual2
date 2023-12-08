@@ -19,6 +19,7 @@ import java.util.List;
 public class AccountController extends HttpServlet {
     @Autowired
     private AccountService accountService;
+    @Autowired
     private final UserService userService;
 
     @Autowired
