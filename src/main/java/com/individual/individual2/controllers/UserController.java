@@ -2,6 +2,7 @@ package com.individual.individual2.controllers;
 
 import com.individual.individual2.models.Account;
 import com.individual.individual2.models.User;
+import com.individual.individual2.repository.UserRepository;
 import com.individual.individual2.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @GetMapping(value = "/users")
-    public String listAccounts(Model model) {
-        List<User> users = userService.getAllUsers();
+    public String listAccounts(Model model, @RequestParam(name = "findUser", required = false) String findUser) {
+        List<User> users;
+
+        if (findUser != null && !findUser.isEmpty()) {
+            // If findUser is not empty, perform a search
+            users = userService.searchUsers(findUser);
+        } else {
+            // If findUser is empty or null, get all users
+            users = userService.getAllUsers();
+        }
+
         model.addAttribute("users", users);
         return "user";
     }
@@ -56,5 +67,16 @@ public class UserController {
         userService.saveUser(editedUser);
         return "redirect:/users";
     }
+
+
+    @GetMapping("/accountsByUser")
+    public String accountsByUser(@RequestParam("userId") int userId, Model model) {
+        User user = userService.getUserById(userId);
+        List<Account> accounts = user.getAccounts();
+        model.addAttribute("accounts", accounts);
+        // Other necessary data can be added to the model
+        return "AccountsByUser"; // Assuming the JSP file is named AccountsByUser.jsp
+    }
+
 
 }

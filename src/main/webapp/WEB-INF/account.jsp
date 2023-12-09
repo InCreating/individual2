@@ -11,6 +11,7 @@
     <a class="btn bn" href="/addAccount">Add account</a>
     <a class="btn bn" href="/form.html">Go back</a>
     <a class="btn bn" href="/accounts?sort=balance">Sort by Balance</a>
+
     <div>
 <table border="1" >
     <tr>
