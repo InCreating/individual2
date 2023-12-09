@@ -29,12 +29,19 @@ public class AccountController extends HttpServlet {
     }
 
     @GetMapping(value = "/accounts")
-    public String listAccounts(Model model) {
-        List<Account> accounts = accountService.findAllAccounts();
-        System.out.println(accounts.toString());
+    public String listAccounts(@RequestParam(required = false) String sort, Model model) {
+        List<Account> accounts;
+        if ("balance".equals(sort)) {
+            accounts = accountService.findAllAccountsSortedByBalance();
+        } else {
+            accounts = accountService.findAllAccounts();
+        }
+        Long sumOfField = accountService.sumOfField();
         model.addAttribute("accounts", accounts);
+        model.addAttribute("sumOfField", sumOfField);
         return "account";
     }
+
 
     @GetMapping("/addAccount")
     public String showAddAccountForm(Model model) {
@@ -77,28 +84,4 @@ public class AccountController extends HttpServlet {
             accountService.saveOrUpdateAccount(editedAccount);
         return "redirect:/accounts";
     }
-
-
-
-
-  /*  @PostMapping("/addAccount")
-    public String addAccount(@RequestParam("accountId") Long accountId,
-                             @RequestParam("balance") Double balance,
-                             @RequestParam("available") boolean available,
-                             @RequestParam("user") Long userId) {
-        Account newAccount = new Account();
-        newAccount.setAccountId(Math.toIntExact(accountId));
-        newAccount.setBalance(balance);
-        newAccount.setAvailable(available);
-
-        User user = userService.getUserById(Math.toIntExact(userId));
-        newAccount.setUser(user);
-
-        accountService.saveOrUpdateAccount(newAccount);
-
-        return "redirect:/accounts";
-    }
-*/
-
-
 }

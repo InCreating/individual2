@@ -4,6 +4,7 @@ import com.individual.individual2.models.Account;
 import com.individual.individual2.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,7 +35,9 @@ public class AccountService {
         log.info("Deleted user {}", id);
     }
 
-   /* public void changeAccountStatus(int id, boolean status) {
-        accountRepository.changeAccountStatus(id, status);
-    }*/
+    public Long sumOfField() { return  accountRepository.sumOfField();}
+
+    public List<Account> findAllAccountsSortedByBalance() {
+        return accountRepository.findAll(Sort.by(Sort.Direction.DESC, "balance"));
+    }
 }
