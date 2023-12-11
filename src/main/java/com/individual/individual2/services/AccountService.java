@@ -10,6 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Jeleascov Tatiana
+ */
+
 @Service
 @Slf4j
 public class AccountService {

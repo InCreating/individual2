@@ -3,6 +3,10 @@ package com.individual.individual2.models;
 import jakarta.persistence.*;
 import lombok.ToString;
 
+/**
+ * @author Jeleascov Tatiana
+ */
+
 @Entity
 @ToString
 @Table(name = "accounts")

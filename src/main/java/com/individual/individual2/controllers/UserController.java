@@ -14,21 +14,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * @author Jeleascov Tatiana and Ciornii Andrei
+ */
+
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
-
 
     @GetMapping(value = "/users")
     public String listAccounts(Model model, @RequestParam(name = "findUser", required = false) String findUser) {
         List<User> users;
 
         if (findUser != null && !findUser.isEmpty()) {
-            // If findUser is not empty, perform a search
             users = userService.searchUsers(findUser);
         } else {
-            // If findUser is empty or null, get all users
             users = userService.getAllUsers();
         }
 
@@ -68,15 +69,11 @@ public class UserController {
         return "redirect:/users";
     }
 
-
     @GetMapping("/accountsByUser")
     public String accountsByUser(@RequestParam("userId") int userId, Model model) {
         User user = userService.getUserById(userId);
         List<Account> accounts = user.getAccounts();
         model.addAttribute("accounts", accounts);
-        // Other necessary data can be added to the model
-        return "AccountsByUser"; // Assuming the JSP file is named AccountsByUser.jsp
+        return "AccountsByUser";
     }
-
-
 }

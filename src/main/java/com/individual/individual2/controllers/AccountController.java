@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * @author Jeleascov Tatiana and Ciornii Andrei
+ */
+
 @Controller
 public class AccountController extends HttpServlet {
     @Autowired
